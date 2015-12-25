@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Vector4.h"
+#include "Vector3.h"
 #include <string>
 #include <sstream>
 
@@ -70,6 +71,16 @@ namespace Math_ias
 			ss << _values[12] << ", " << _values[13] << ", " << _values[14] << ", " << _values[15] << endl;
 
 			return ss.str();
+		}
+
+		static Matrix4x4<T> Matrix4x4::translation(Vector3<T>& vector)
+		{
+			return Matrix4x4<T>(
+				1, 0, 0, vector[0],
+				0, 1, 0, vector[1],
+				0, 0, 1, vector[2],
+				0, 0, 0, 1
+				);
 		}
 
 		Matrix4x4<T> Matrix4x4::operator*(Matrix4x4<T> &other)
