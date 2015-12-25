@@ -5,14 +5,15 @@
 namespace Math_ias
 {
 	template <class T>
-	class Vector3
+	class Vector4
 	{
 		T _x;
 		T _y;
 		T _z;
+		T _w;
 
 	public:
-		Vector3(T x, T y, T z) : _x(x), _y(y), _z(z)
+		Vector4(T x, T y, T z, T w) : _x(x), _y(y), _z(z), _w(w)
 		{
 			
 		}
@@ -22,13 +23,14 @@ namespace Math_ias
 			if (i == 0) return _x;
 			if (i == 1) return _y;
 			if (i == 2) return _z;
+			if (i == 3) return _w;
 
 			throw std::out_of_range("Index out of bounds!");
 		}
 
-		T dot(Vector3<T>& other)
+		T dot(Vector4<T>& other)
 		{
-			return _x*other._x + _y*other._y + _z*other._z;
+			return _x*other._x + _y*other._y + _z*other._z + _w*other._w;
 		}
 	};
 }
