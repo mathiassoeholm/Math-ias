@@ -4,6 +4,7 @@
 #include "Vector3.h"
 #include <string>
 #include <sstream>
+#include <cmath>
 
 namespace Math_ias
 {
@@ -89,6 +90,36 @@ namespace Math_ias
 				1, 0, 0, x,
 				0, 1, 0, y,
 				0, 0, 1, z,
+				0, 0, 0, 1
+				);
+		}
+
+		static Matrix4x4<T> rotationX(const T& theta)
+		{
+			return Matrix4x4<T>(
+				1, 0, 0, 0,
+				0, cos(theta), -sin(theta), 0,
+				0, sin(theta), cos(theta), 0,
+				0, 0, 0, 1
+				);
+		}
+
+		static Matrix4x4<T> rotationY(const T& theta)
+		{
+			return Matrix4x4<T>(
+				cos(theta), 0, sin(theta), 0,
+				0, 1, 0, 0,
+				-sin(theta), 0, cos(theta), 0,
+				0, 0, 0, 1
+				);
+		}
+
+		static Matrix4x4<T> rotationZ(const T& theta)
+		{
+			return Matrix4x4<T>(
+				cos(theta), -sin(theta), 0, 0,
+				sin(theta), cos(theta), 0, 0,
+				0, 0, 1, 0,
 				0, 0, 0, 1
 				);
 		}
