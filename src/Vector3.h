@@ -17,7 +17,7 @@ namespace Math_ias
 			
 		}
 
-		const T &operator[](int i)
+		const T &operator[](int i) const
 		{
 			if (i == 0) return _x;
 			if (i == 1) return _y;

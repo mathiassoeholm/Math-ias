@@ -73,7 +73,7 @@ namespace Math_ias
 			return ss.str();
 		}
 
-		static Matrix4x4<T> Matrix4x4::translation(Vector3<T>& vector)
+		static Matrix4x4<T> Matrix4x4::translation(const Vector3<T>& vector)
 		{
 			return Matrix4x4<T>(
 				1, 0, 0, vector[0],
