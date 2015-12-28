@@ -62,23 +62,33 @@ namespace Math_ias
 			return _values;
 		}
 
-		const std::string toString()
+	    std::string toString()
 		{
 			auto ss = std::stringstream();
-			ss << _values[0] << ", " << _values[1] << ", " << _values[2] << ", " << _values[3] << endl;
-			ss << _values[4] << ", " << _values[5] << ", " << _values[6] << ", " << _values[7] << endl;
-			ss << _values[8] << ", " << _values[9] << ", " << _values[10] << ", " << _values[11] << endl;
-			ss << _values[12] << ", " << _values[13] << ", " << _values[14] << ", " << _values[15] << endl;
+			ss << _values[0] << ", " << _values[1] << ", " << _values[2] << ", " << _values[3] << std::endl;
+			ss << _values[4] << ", " << _values[5] << ", " << _values[6] << ", " << _values[7] << std::endl;
+			ss << _values[8] << ", " << _values[9] << ", " << _values[10] << ", " << _values[11] << std::endl;
+			ss << _values[12] << ", " << _values[13] << ", " << _values[14] << ", " << _values[15] << std::endl;
 
 			return ss.str();
 		}
 
-		static Matrix4x4<T> Matrix4x4::translation(const Vector3<T>& vector)
+		static Matrix4x4<T> translation(const Vector3<T>& vector)
 		{
 			return Matrix4x4<T>(
 				1, 0, 0, vector[0],
 				0, 1, 0, vector[1],
 				0, 0, 1, vector[2],
+				0, 0, 0, 1
+				);
+		}
+
+		static Matrix4x4<T> translation(const T& x, const T& y, const T& z)
+		{
+			return Matrix4x4<T>(
+				1, 0, 0, x,
+				0, 1, 0, y,
+				0, 0, 1, z,
 				0, 0, 0, 1
 				);
 		}
