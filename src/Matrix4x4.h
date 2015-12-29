@@ -24,12 +24,12 @@ namespace Math_ias
 			_values[12] = n13; _values[13] = n14; _values[14] = n15;  _values[15] = n16;
 		}
 
-		T get(int row, int column)
+		T get(int row, int column) const
 		{
 			return _values[column + row * 4];
 		}
 
-		Vector4<T> getRow(int row)
+		Vector4<T> getRow(int row) const
 		{
 			return Vector4<T>(
 				get(row, 0),
@@ -38,7 +38,7 @@ namespace Math_ias
 				get(row, 3));
 		}
 
-		Vector4<T> getColumn(int column)
+		Vector4<T> getColumn(int column) const
 		{
 			return Vector4<T>(
 				get(0, column),
@@ -123,7 +123,7 @@ namespace Math_ias
 				);
 		}
 
-		Matrix4x4<T> Matrix4x4::operator*(Matrix4x4<T> &other)
+		Matrix4x4<T> Matrix4x4::operator*(const Matrix4x4<T> &other)
 		{
 			Matrix4x4<T> result = Matrix4x4<T>();
 
