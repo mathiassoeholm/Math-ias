@@ -2,7 +2,6 @@
 
 #include "Vector4.h"
 #include "Vector3.h"
-#include <string>
 #include <sstream>
 #include <cmath>
 
