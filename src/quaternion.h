@@ -34,7 +34,7 @@ namespace Math_ias
 
 		Quaternion(T angle, const T& x, const T& y, const T& z)
 		{
-			T radians = angle * (M_PI / 180);
+			T radians = angle * (static_cast<T>(M_PI) / 180);
 
 			_q[0] = cos(radians / 2);
 			_q[1] = sin(radians / 2)*x;
