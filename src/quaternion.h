@@ -29,6 +29,8 @@ namespace Math_ias
 			_q[2] = _q[2] / length;
 			_q[3] = _q[3] / length;
 		}
+
+		Quaternion(){}
     public:
 		Quaternion(T angle, const Vector3<T>& vec) : Quaternion(angle, vec[0], vec[1], vec[2]){}
 
@@ -54,12 +56,24 @@ namespace Math_ias
 				);
 		}
 
-		std::string toString()
+		std::string toString() const
 		{
 			auto ss = std::stringstream();
 			ss << "(" << _q[0] << ", " << _q[1] << ", " << _q[2] << ", " << _q[3] << ")" << std::endl;
 
 			return ss.str();
+		}
+
+		Quaternion<T> Quaternion::operator*(const Quaternion<T> &other) const
+		{
+			Quaternion<T> result = Quaternion<T>();
+
+			result._q[0] = other._q[0] * _q[0] - other._q[1] * _q[1] - other._q[2] * _q[2] - other._q[3] * _q[3];
+			result._q[1] = other._q[0] * _q[1] + other._q[1] * _q[0] - other._q[2] * _q[3] + other._q[3] * _q[2];
+			result._q[2] = other._q[0] * _q[2] + other._q[1] * _q[3] + other._q[2] * _q[0] - other._q[3] * _q[1];
+			result._q[3] = other._q[0] * _q[3] - other._q[1] * _q[2] + other._q[2] * _q[1] + other._q[3] * _q[0];
+			
+			return result;
 		}
     };
 }

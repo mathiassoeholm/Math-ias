@@ -62,7 +62,7 @@ namespace Math_ias
 			return _values;
 		}
 
-	    std::string toString()
+	    std::string toString() const
 		{
 			auto ss = std::stringstream();
 			ss << _values[0] << ", " << _values[1] << ", " << _values[2] << ", " << _values[3] << std::endl;
@@ -123,7 +123,7 @@ namespace Math_ias
 				);
 		}
 
-		Matrix4x4<T> Matrix4x4::operator*(const Matrix4x4<T> &other)
+		Matrix4x4<T> Matrix4x4::operator*(const Matrix4x4<T> &other) const
 		{
 			Matrix4x4<T> result = Matrix4x4<T>();
 
