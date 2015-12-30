@@ -4,7 +4,7 @@
 
 namespace Math_ias
 {
-	template<class T>
+	template<typename T>
 	class Vector3
 	{
 		T _x;
@@ -17,7 +17,7 @@ namespace Math_ias
 			
 		}
 
-		const T &operator[](int i) const
+		const T &operator[](size_t i) const
 		{
 			if (i == 0) return _x;
 			if (i == 1) return _y;

@@ -7,7 +7,7 @@
 
 namespace Math_ias
 {
-    template <class T>
+    template <typename T>
     class Matrix4x4
     {
 		T _values[16];

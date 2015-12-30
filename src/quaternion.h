@@ -9,7 +9,7 @@
 
 namespace Math_ias
 {
-    template<class T>
+    template<typename T>
     class Quaternion
     {
 		T _q[4];
