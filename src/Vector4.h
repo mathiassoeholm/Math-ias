@@ -33,4 +33,6 @@ namespace Math_ias
 			return _x*other._x + _y*other._y + _z*other._z + _w*other._w;
 		}
 	};
+
+	typedef Vector4<float> Vector4f;
 }

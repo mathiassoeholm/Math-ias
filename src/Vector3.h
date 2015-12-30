@@ -4,7 +4,7 @@
 
 namespace Math_ias
 {
-	template <class T>
+	template<class T>
 	class Vector3
 	{
 		T _x;
@@ -31,4 +31,7 @@ namespace Math_ias
 			return _x*other._x + _y*other._y + _z*other._z;
 		}
 	};
+
+	typedef Vector3<float> Vector3f;
 }
+

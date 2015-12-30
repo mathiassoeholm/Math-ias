@@ -141,4 +141,6 @@ namespace Math_ias
 			return result;
 		}
     };
+
+	typedef Matrix4x4<float> Matrix4x4f;
 }

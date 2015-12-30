@@ -115,4 +115,6 @@ namespace Math_ias
 			return result;
 		}
     };
+
+	typedef Quaternion<float> Quaternionf;
 }
