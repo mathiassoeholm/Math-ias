@@ -30,6 +30,13 @@ namespace Math_ias
 		{
 			return _x*other._x + _y*other._y + _z*other._z;
 		}
+
+		Vector3<T> Vector3::operator-() const
+		{
+			Vector3<T> result = Vector3<T>(-_x, -_y, -_z);
+
+			return result;
+		}
 	};
 
 	typedef Vector3<float> Vector3f;

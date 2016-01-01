@@ -32,6 +32,13 @@ namespace Math_ias
 		{
 			return _x*other._x + _y*other._y + _z*other._z + _w*other._w;
 		}
+
+		Vector4<T> Vector4::operator-() const
+		{
+			Vector4<T> result = Vector4<T>(-_x, -_y, -_z, -_w);
+
+			return result;
+		}
 	};
 
 	typedef Vector4<float> Vector4f;
