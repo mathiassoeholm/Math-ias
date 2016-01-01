@@ -11,10 +11,15 @@ namespace Math_ias
     class Matrix4x4
     {
 		T _values[16];
-
-		Matrix4x4() {}
-    public:
 		
+    public:
+		Matrix4x4()
+		{
+			_values[0] = 1; _values[1] = 0; _values[2] = 0;  _values[3] = 0;
+			_values[4] = 0; _values[5] = 1; _values[6] = 0;  _values[7] = 0;
+			_values[8] = 0; _values[9] = 0; _values[10] = 1;  _values[11] = 0;
+			_values[12] = 0; _values[13] = 0; _values[14] = 0;  _values[15] = 1;
+		}
 
 		Matrix4x4(T n1, T n2, T n3, T n4, T n5, T n6, T n7, T n8, T n9, T n10, T n11, T n12, T n13, T n14, T n15, T n16)
 		{

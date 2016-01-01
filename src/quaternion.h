@@ -30,9 +30,10 @@ namespace Math_ias
 			_q[2] = _q[2] / length;
 			_q[3] = _q[3] / length;
 		}
-
-		Quaternion(){}
+		
     public:
+		Quaternion() : Quaternion(0, 0, 0, 0) {}
+
 		Quaternion(T angle, const Vector3<T>& vec) : Quaternion(angle, vec[0], vec[1], vec[2]){}
 
 		Quaternion(T angle, const T& x, const T& y, const T& z)
