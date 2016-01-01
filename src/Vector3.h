@@ -31,11 +31,54 @@ namespace Math_ias
 			return _x*other._x + _y*other._y + _z*other._z;
 		}
 
-		Vector3<T> Vector3::operator-() const
+		Vector3<T> operator-(const Vector3<T> &other) const
+		{
+			Vector3<T> result = Vector3<T>(
+				_x - other._x,
+				_y - other._y,
+				_z - other._z);
+
+			return result;
+		}
+
+		Vector3<T> operator-() const
 		{
 			Vector3<T> result = Vector3<T>(-_x, -_y, -_z);
 
 			return result;
+		}
+
+		Vector3<T> operator+(const Vector3<T> &other) const
+		{
+			return Vector3<T>(
+				_x + other._x,
+				_y + other._y,
+				_z + other._z);
+		}
+
+		
+
+		Vector3<T> operator*(T scalar) const
+		{
+			return Vector3<T>(
+				_x * scalar,
+				_y * scalar,
+				_z * scalar);
+		}
+
+		static Vector3<T> right()
+		{
+			return Vector3<T>(1, 0, 0);
+		}
+
+		static Vector3<T> up()
+		{
+			return Vector3<T>(0, 1, 0);
+		}
+
+		static Vector3<T> forward()
+		{
+			return Vector3<T>(0, 0, 1);
 		}
 	};
 
