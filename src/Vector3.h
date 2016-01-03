@@ -56,8 +56,6 @@ namespace Math_ias
 				_z + other._z);
 		}
 
-		
-
 		Vector3<T> operator*(T scalar) const
 		{
 			return Vector3<T>(
