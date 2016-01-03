@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <stdexcept>
+#include <sstream>
 
 namespace Math_ias
 {
@@ -26,9 +27,23 @@ namespace Math_ias
 			throw std::out_of_range("Index out of bounds!");
 		}
 
-		T dot(Vector3<T>& other)
+		T dot(Vector3<T>& other) const
 		{
 			return _x*other._x + _y*other._y + _z*other._z;
+		}
+
+		Vector3<T> normalized() const
+		{
+			T l = sqrt(_x*_x + _y*_y + _z*_z);
+			return Vector3<T>(_x/l, _y/l, _z/l);
+		}
+
+		std::string toString() const
+		{
+			auto ss = std::stringstream();
+			ss << "(" << _x << ", " << _y << ", " << _z << ")" << std::endl;
+
+			return ss.str();
 		}
 
 		Vector3<T> operator-(const Vector3<T> &other) const

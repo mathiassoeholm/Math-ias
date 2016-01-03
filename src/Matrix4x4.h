@@ -128,7 +128,7 @@ namespace Math_ias
 				);
 		}
 
-		Matrix4x4<T> Matrix4x4::operator*(const Matrix4x4<T> &other) const
+		Matrix4x4<T> operator*(const Matrix4x4<T> &other) const
 		{
 			Matrix4x4<T> result = Matrix4x4<T>();
 
@@ -144,6 +144,19 @@ namespace Math_ias
 			}
 
 			return result;
+		}
+
+		Vector4<T> operator*(const Vector4<T> &vector) const
+		{
+			T values[4];
+
+			for (int r = 0; r < 4; r++)
+			{
+				auto row = getRow(r);
+				values[r] = row.dot(vector);
+			}
+
+			return Vector4<T>(values[0], values[1], values[2], values[3]);
 		}
     };
 

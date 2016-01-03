@@ -28,9 +28,17 @@ namespace Math_ias
 			throw std::out_of_range("Index out of bounds!");
 		}
 
-		T dot(Vector4<T>& other)
+		T dot(const Vector4<T>& other)
 		{
 			return _x*other._x + _y*other._y + _z*other._z + _w*other._w;
+		}
+
+		std::string toString() const
+		{
+			auto ss = std::stringstream();
+			ss << "(" << _x << ", " << _y << ", " << _z << ", " << _w << ")" << std::endl;
+
+			return ss.str();
 		}
 
 		Vector4<T> Vector4::operator-() const

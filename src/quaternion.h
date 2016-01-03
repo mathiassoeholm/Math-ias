@@ -70,9 +70,9 @@ namespace Math_ias
 
 		static Quaternion<T> fromEuler(T x, T y, T z)
 		{
-			T xRad = x * ONE_DEG_IN_RAD;
-			T yRad = y * ONE_DEG_IN_RAD;
-			T zRad = z * ONE_DEG_IN_RAD;
+			T xRad = x * static_cast<T>(ONE_DEG_IN_RAD);
+			T yRad = y * static_cast<T>(ONE_DEG_IN_RAD);
+			T zRad = z * static_cast<T>(ONE_DEG_IN_RAD);
 
 			T c1 = cos(yRad / 2);
 			T s1 = sin(yRad / 2);
