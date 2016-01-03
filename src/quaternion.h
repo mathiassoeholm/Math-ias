@@ -7,6 +7,8 @@
 #include "Matrix4x4.h"
 #include <limits>
 
+#define ONE_DEG_IN_RAD 0.017444444
+
 namespace Math_ias
 {
     template<typename T>
@@ -64,6 +66,30 @@ namespace Math_ias
 			ss << "(" << _q[0] << ", " << _q[1] << ", " << _q[2] << ", " << _q[3] << ")" << std::endl;
 
 			return ss.str();
+		}
+
+		static Quaternion<T> fromEuler(T x, T y, T z)
+		{
+			T xRad = x * ONE_DEG_IN_RAD;
+			T yRad = y * ONE_DEG_IN_RAD;
+			T zRad = z * ONE_DEG_IN_RAD;
+
+			T c1 = cos(yRad / 2);
+			T s1 = sin(yRad / 2);
+			T c2 = cos(zRad / 2);
+			T s2 = sin(zRad / 2);
+			T c3 = cos(xRad / 2);
+			T s3 = sin(xRad / 2);
+			T c1c2 = c1*c2;
+			T s1s2 = s1*s2;
+
+			auto result = Quaternion<T>();
+			result._q[0] = c1c2*c3 - s1s2*s3;
+			result._q[1] = c1c2*s3 + s1s2*c3;
+			result._q[2] = s1*c2*c3 + c1*s2*s3;
+			result._q[3] = c1*s2*c3 - s1*c2*s3;
+
+			return result;
 		}
 
 		Quaternion<T> Quaternion::operator*(const Quaternion<T> &other) const
