@@ -13,6 +13,8 @@ namespace Math_ias
 		T _z;
 
 	public:
+		Vector3() : Vector3(0, 0, 0) { }
+
 		Vector3(T x, T y, T z) : _x(x), _y(y), _z(z)
 		{
 			
