@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <stdexcept>
+#include <sstream>
 
 namespace Math_ias
 {
@@ -46,6 +47,11 @@ namespace Math_ias
 			Vector4<T> result = Vector4<T>(-_x, -_y, -_z, -_w);
 
 			return result;
+		}
+
+		T* valuePtr()
+		{
+			return &_x;
 		}
 	};
 
