@@ -42,7 +42,7 @@ namespace Math_ias
 			return ss.str();
 		}
 
-		Vector4<T> Vector4::operator-() const
+		Vector4<T> operator-() const
 		{
 			Vector4<T> result = Vector4<T>(-_x, -_y, -_z, -_w);
 

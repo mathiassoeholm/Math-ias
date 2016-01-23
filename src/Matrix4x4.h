@@ -69,7 +69,7 @@ namespace Math_ias
 
 	    std::string toString() const
 		{
-			auto ss = std::stringstream();
+			std::stringstream ss;
 			ss << _values[0] << ", " << _values[1] << ", " << _values[2] << ", " << _values[3] << std::endl;
 			ss << _values[4] << ", " << _values[5] << ", " << _values[6] << ", " << _values[7] << std::endl;
 			ss << _values[8] << ", " << _values[9] << ", " << _values[10] << ", " << _values[11] << std::endl;

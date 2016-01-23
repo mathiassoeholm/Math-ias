@@ -2,12 +2,13 @@
 
 #include "Vector3.h"
 #include <cmath>
-#define _USE_MATH_DEFINES
 #include <math.h>
 #include "Matrix4x4.h"
 #include <limits>
+#include <stdlib.h>
 
 #define ONE_DEG_IN_RAD 0.017444444
+#define M_PI 3.14159265358979323846
 
 namespace Math_ias
 {
@@ -62,7 +63,7 @@ namespace Math_ias
 
 		std::string toString() const
 		{
-			auto ss = std::stringstream();
+			std::stringstream ss;
 			ss << "(" << _q[0] << ", " << _q[1] << ", " << _q[2] << ", " << _q[3] << ")" << std::endl;
 
 			return ss.str();
@@ -92,7 +93,7 @@ namespace Math_ias
 			return result;
 		}
 
-		Quaternion<T> Quaternion::operator*(const Quaternion<T> &other) const
+		Quaternion<T> operator*(const Quaternion<T> &other) const
 		{
 			Quaternion<T> result = Quaternion<T>();
 
