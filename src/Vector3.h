@@ -2,6 +2,7 @@
 
 #include <stdexcept>
 #include <sstream>
+#include <cmath>
 
 namespace Math_ias
 {
